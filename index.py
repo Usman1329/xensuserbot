@@ -372,7 +372,6 @@ async def vapor(event):
         data = ''    
     reply_text = str(data).translate(WIDE_MAP)
     await event.edit(reply_text)
-from zalgo_text import zalgo
 @client.on(events.NewMessage(outgoing=True))
 async def ownerpowers(e):
 	if '.upload ' in e.raw_text:
