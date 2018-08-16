@@ -372,19 +372,6 @@ async def vapor(event):
         data = ''    
     reply_text = str(data).translate(WIDE_MAP)
     await event.edit(reply_text)
-@client.on(events.NewMessage(outgoing=True, pattern='.zal'))
-async def zal(event):
-     textx=await event.get_reply_message()
-     message = await client.get_messages(event.chat_id)
-     if textx:
-         message = textx
-         message = str(message.message)
-     else:
-        message = str(message[0].message[4:])
-     input_text = " ".join(message).lower()
-     zalgofied_text = zalgo.zalgo().zalgofy(input_text)
-     await event.edit(zalgofied_text)
-
 from zalgo_text import zalgo
 @client.on(events.NewMessage(outgoing=True))
 async def ownerpowers(e):
